@@ -1,17 +1,26 @@
 #include <stdio.h>
 int main()
 {
-	int i=1;
+	int amount, total_recharge = 0, numrecharge = 0;
 	printf("This is a program written in C to demonstrate the use of while loop");
-	printf("\nEnter the number: ");
-	scanf("%d", &i);
-	while (i!= 0)
+	printf("\nEnter the recharge amount: ");
+	scanf("%d", &amount);
+	while (amount > 0 && total_recharge <= 5000)
 	{
-		printf("\n The number entered by the user is: %d", i);
-		printf("\n The cube of the number is: %d", i*i*i);
-		printf("\nEnter the number: ");
-	    scanf("%d", &i);
+		total_recharge = total_recharge + amount;
+		numrecharge = numrecharge + 1;
+		if (total_recharge > 5000)
+		{
+			printf("\nRecharge Limit Reached");
+		}
+		else
+		{
+			printf("\nEnter the recharge amount again: ");
+			scanf("%d", &amount);
+		}
 	}
-return 0;
+	printf("\nThe total recharged amount is: %d", total_recharge);
+	printf("\nThe number of recharge attempts is: %d", numrecharge);
+	return 0;
 }
 

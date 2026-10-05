@@ -1,23 +1,36 @@
 #include <stdio.h>
 int main()
 {
-	int temp, i, total_temp=0, greater_temp=0;
-	printf("This is a program written in C to demonstrate the use of for loop");
-	
-	for (i=1; i<=7; i++)
+	float price, total_bill = 0, discount = 0, final_bill;
+	int num;
+	printf("This is a program written in C to demonstrate the use of while loop");
+	printf("\nEnter the price of the item: ");
+	scanf("%f", &price);
+	total_bill = total_bill + price;
+	printf("\nDo you want to order another item? (Enter 1-->Yes and 0--> No)");
+	printf("\nEnter the number: ");
+	scanf("%d", &num);
+	while (num == 1)
 	{
-	printf("\nEnter the temp for each day of the week respectively: ");
-	scanf("%d", &temp);
-
-	total_temp = total_temp + temp;
-	if (temp> 100)
+		printf("\nEnter the price of the item: ");
+		scanf("%f", &price);
+		total_bill = total_bill + price;
+		printf("\nDo you want to order another item? (Enter 1-->Yes and 0--> No)");
+		printf("\nEnter the number: ");
+		scanf("%d", &num);
+	}
+	if (total_bill > 5000)
 	{
-		greater_temp= greater_temp + 1;
+		discount = total_bill * 0.05;
 	}
+	else
+	{
+		discount = 0;
 	}
-	printf("\nThe total temperature is: %d", total_temp);
-	printf("\nThe number of temperatures greater than 100 is: %d", greater_temp);
-	
+	final_bill = total_bill - discount;
+	printf("\nThe total bill is: %.2f", total_bill);
+	printf("\nThe discount is: %.2f", discount);
+	printf("\nThe final bill is: %.2f", final_bill);
 	return 0;
 }
 

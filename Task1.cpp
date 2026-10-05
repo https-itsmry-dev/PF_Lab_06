@@ -1,12 +1,19 @@
 #include <stdio.h>
 int main()
 {
-	int i;
-	printf("This is a program written in C, to print the multiples of 2 till 10 using for loop");
-	for (i=1; i<=10; i++)
+	int amount, balance = 50000, numwithdrawal = 0;
+	printf("This is a program written in C to demonstrate the use of while loop");
+	printf("\nEnter the withdrawal amount: ");
+	scanf("%d", &amount);
+	while (amount > 0)
 	{
-		printf("\n %d", i*2);
+		balance = balance - amount;
+		numwithdrawal = numwithdrawal + 1;
+		printf("\nEnter the withdrawal amount again: ");
+		scanf("%d", &amount);
 	}
-return 0;
+	printf("\nThe remaining balance is: %d", balance);
+	printf("\nThe number of withdrawals is: %d", numwithdrawal);
+	return 0;
 }
 
